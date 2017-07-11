@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  
   include BasicQuestionsHelper
 
   def generate
