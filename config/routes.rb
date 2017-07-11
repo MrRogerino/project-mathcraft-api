@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # routes for the player model
   resources :players, only: [:index, :create, :show, :update, :delete]
   
+  get '/generate', to: 'questions#generate'
+
 end
