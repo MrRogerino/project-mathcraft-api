@@ -1,4 +1,4 @@
-class PlayersBuildingsController
+class PlayersBuildingsController < ApplicationController
   before_action :check_ownership, except: :index
   before_action :check_existence, only: [:upgrate, :move, :delete]
 
