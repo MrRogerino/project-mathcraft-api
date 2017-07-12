@@ -27,10 +27,10 @@ class PlayersBuildingsController
       if players_building.save
         render json: { player: Player.find_by(id: params[:player_id]).as_json(methods: [:buildings, :resources, :level]) }
       else
-        render json { errors: players_building.errors.full_messages }
+        render json: { errors: players_building.errors.full_messages }
       end
     else
-      render json { errors: 'Not Enough Resources' }
+      render json: { errors: 'Not Enough Resources' }
     end
   end
 
