@@ -13,3 +13,4 @@ class AuthorizationController < ApplicationController
   # end
 
 end
+

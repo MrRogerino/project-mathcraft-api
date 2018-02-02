@@ -4,7 +4,7 @@ class PlayersBuildingsController < ApplicationController
 
   def index
     players_buildings = Playersbuildings.find_by(player_id: params[:player_id])
-    render json: { buildings: players_buildings.as_json}
+    render json: { buildings: players_buildings.as_json }
   end
 
   def create
@@ -45,7 +45,7 @@ class PlayersBuildingsController < ApplicationController
 
   def destroy
     Playersbuildings.find_by(id: params[:id]).destroy
-    render json: { player: Player.find_by(id: params[:player_id]).as_json(methods: [:buildings, :resources, :level]) }
+    render json: {player: Player.find_by(id: params[:player_id]).as_json(methods: [:buildings, :resources, :level]) }
   end
 
   private
@@ -66,7 +66,6 @@ class PlayersBuildingsController < ApplicationController
     if !player || !building
       render json: { errors: { player: player.errors.full_messages, building: building.errors.full_messages } }
     end
-
   end
 
 
