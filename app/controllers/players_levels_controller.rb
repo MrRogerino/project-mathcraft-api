@@ -7,7 +7,7 @@ class PlayersLevelsController < ApplicationController
       PlayersLevel.create({level: level, player: player, time_started: Time.current.to_i})
       render json: { level: level.as_json[methods: :generated_questions]}
     else
-      render json: { errors: { level: level.errors.full_messages, player: player.errors.full_messages }
+      render json: { errors: { level: level.errors.full_messages, player: player.errors.full_messages } }
     end
   end
 
